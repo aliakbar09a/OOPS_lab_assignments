@@ -92,3 +92,5 @@ class Rational
 			this->deno = b / gcd;
 		}
 };
+		}
+};
