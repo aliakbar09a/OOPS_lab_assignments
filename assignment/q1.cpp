@@ -5,6 +5,7 @@ int main()
   char input[1024];
   int table[26] = {0}, i = 0, index;
   // getting the input
+  cout<<"Enter the text\n";
   cin.getline(input, 1024);
   while(input[i] != '\0')
   {
@@ -17,8 +18,8 @@ int main()
   }
   for(i = 0; i<=24; i++)
   {
-    cout<<table[i]<<" \""<<char(i+97)<<"\", ";
+    cout<<table[i]<<"->\""<<char(i+97)<<"\", ";
   }
-  cout<<table[25]<<" "<<char(25+97);
+  cout<<table[25]<<"->\""<<char(25+97)<<"\"";
   cout<<endl;
 }
