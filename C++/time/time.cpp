@@ -41,10 +41,7 @@ class Time
 			min = sec % 3600 / 60;
 			secs = sec% 60;
 			hr / 12 == 1? a = "PM": a = "AM";
-			if(hr % 12 == 0) 
-				hr = 12;
-			else 
-				hr = hr % 12;
+			hr = hr % 12;
 			cout<<"\nThe Standard time is : "<< hr <<" hrs "<< min <<" mins "<< secs<<" secs "<<a<<endl<<endl;
 		}
 	private:
