@@ -1,0 +1,5 @@
+-> static member function can not be declared as constant member function.
+-> syntax
+-> initializing static data member
+-> error for accessing non static data member by static data member
+-> 
