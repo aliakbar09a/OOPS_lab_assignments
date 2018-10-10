@@ -15,7 +15,7 @@ class HugeInteger
         }
         void input()
         {
-            cout<<"\nEnter the 40 digit number : ";
+            cout<<"\nEnter the big digit number : ";
             cin>>temp;
             for(int i = 0; temp[i]!= '\0'; i++)
             {
@@ -24,8 +24,13 @@ class HugeInteger
         }
         void output()
         {
-            cout<<"\nThe 40 digit number is : ";
-            for(int i = 0; temp[i]!= '\0'; i++)
+            cout<<"\nThe big number is : ";
+            int i = 0;
+            // loop to bring it to first non zero
+            while(array[i] == 0)
+                i++;
+            // printing the number
+            for(; temp[i]!= '\0'; i++)
             {
                 cout<<array[i];
             }
@@ -63,13 +68,48 @@ class HugeInteger
                 {
                     borrow = 0;
                     array[i] = (array[i] - sub) % 10;
-
                 }
-                //borrow = (array[i] - sub + 10)/10;
-                //cout<<"sub "<<sub<<" borrow "<<borrow;
                 x = x/10;
                 sub = x % 10;
                 sub = sub + borrow;
             }
+        }
+        void isEqualTo(const HugeInteger& obj)
+        {
+            int i=0, j=0;
+            // finding the first non zero digit of this object
+            while(array[i] == 0)
+                i++;
+            // finding the first non zero digit of passed object
+            while(obj.array[j] == 0)
+                j++;
+            for(; temp[i]!= '\0'; i++, j++)
+            {
+                if(array[i] != obj.array[j])
+                    break;
+            }
+            if((temp[i] == '\0') && (obj.temp[j] == '\0'))
+                cout<<"\nTrue\n";
+            else
+                cout<<"\nFalse\n";
+        }
+        void isNotEqualTo(const HugeInteger& obj)
+        {
+            int i=0, j=0;
+            // finding the first non zero digit of this object
+            while(array[i] == 0)
+                i++;
+            // finding the first non zero digit of passed object
+            while(obj.array[j] == 0)
+                j++;
+            for(; temp[i]!= '\0'; i++, j++)
+            {
+                if(array[i] != obj.array[j])
+                    break;
+            }
+            if((temp[i] == '\0') && (obj.temp[j] == '\0'))
+                cout<<"\nFalse\n";
+            else
+                cout<<"\nTrue\n";
         }
 };
