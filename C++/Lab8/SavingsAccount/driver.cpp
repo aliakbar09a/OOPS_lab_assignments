@@ -22,5 +22,6 @@ int main()
     monthInterest = saver2.calculateMonthlyInterest();
     cout<<"\nThe monthly interest of saver2 is : $"<<monthInterest;
     cout<<"\nThe new balance of saver2 is : $"<<saver2.getDeposit();
+    cout<<endl;
 
 }
